@@ -12,7 +12,6 @@ install:
 
 script:
  - ./st.sh
- - pytest
 
 after_success:
  - codecov
