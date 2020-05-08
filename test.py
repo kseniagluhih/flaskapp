@@ -7,4 +7,4 @@ def test_basic_path():
 
 def test_data_to_path():
 	r = requests.get("http://localhost:5000/data_to")
-	assert r.status_code == 200	
+	assert r.status_code == 200
