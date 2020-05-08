@@ -1,6 +1,18 @@
 gunicorn --bind 127.0.0.1:5000 wsgi:app & APP_PID=$!
-sleep 10
+sleep 25
 echo start client
-pytest test.py
+python3 client.py
+APP_CODE=$?
+sleep 5
 echo $APP_PID
 kill -TERM $APP_PID
+echo app code $APP_CODE
+exit $APP_CODE
+
+#gunicorn --bind 127.0.0.1:5000 wsgi:app & APP_PID=$!
+#sleep 10
+#echo start client
+#pytest test.py
+#echo $APP_PID
+#kill -TERM $APP_PID
+
